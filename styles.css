@@ -1,0 +1,139 @@
+/* Fuentes y colores */
+body {
+  font-family: "Roboto", sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  background-color: #f2f2f2;
+  color: #333;
+}
+
+h1,
+h2 {
+  font-family: "Poppins", sans-serif;
+  color: #00bfff;
+}
+
+.container {
+  width: 90%;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* Sección Portada */
+.hero-section {
+  height: 100vh;
+  background-image: url("portada-piscina.jpg");
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  color: white;
+  text-align: center;
+}
+
+.hero-section .overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+}
+
+.cta-button {
+  background-color: #40e0d0;
+  color: white;
+  padding: 15px 30px;
+  text-decoration: none;
+  border-radius: 5px;
+  font-weight: 600;
+  transition: background-color 0.3s;
+}
+
+.cta-button:hover {
+  background-color: #00bfff;
+}
+
+/* Sección Servicios */
+.services-section {
+  background-color: #ffffff;
+  padding: 50px 0;
+  text-align: center;
+}
+
+.service-cards {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+}
+
+.service-card {
+  background-color: #00bfff;
+  color: white;
+  padding: 20px;
+  width: 30%;
+  margin: 15px;
+  border-radius: 10px;
+  transition: transform 0.3s;
+}
+
+.service-card:hover {
+  transform: translateY(-10px);
+}
+
+/* Sección Portafolio */
+.portfolio-section {
+  padding: 50px 0;
+}
+
+.gallery img {
+  width: 48%;
+  margin: 1%;
+  border-radius: 10px;
+}
+
+/* Sección Contacto */
+.contact-section {
+  background-color: #40e0d0;
+  padding: 50px 0;
+  color: white;
+}
+
+.contact-section form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.contact-section form input,
+.contact-section form textarea {
+  padding: 15px;
+  border: none;
+  border-radius: 5px;
+}
+
+.contact-section form button {
+  padding: 15px;
+  background-color: #00bfff;
+  color: white;
+  border: none;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+/* Botón flotante de WhatsApp */
+.whatsapp-button {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background-color: #25d366;
+  color: white;
+  padding: 10px;
+  border-radius: 50%;
+  font-size: 24px;
+  text-align: center;
+  z-index: 1000;
+}
