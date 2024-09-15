@@ -156,7 +156,7 @@ p {
 
 /*===== All Section Title Style =====*/
 .section-title .title {
-  font-size: 50px;
+  font-size: 42px;
   font-weight: 600;
   line-height: 55px;
   color: #121212;
@@ -514,6 +514,41 @@ p {
 }
 .header-hero .header-shape img {
   width: 100%;
+}
+
+/*===========================
+    3.ABOUT SECTION css
+===========================*/
+
+.about-area {
+  padding: 100px 0;
+}
+
+.section-title {
+  margin-bottom: 50px;
+}
+
+.section-title .title {
+  font-size: 32px;
+  font-weight: 700;
+  color: #333;
+}
+
+.section-title .text {
+  font-size: 16px;
+  color: #777;
+}
+
+.about-area .container {
+  max-width: 1200px;
+}
+
+.pb-10 {
+  padding-bottom: 10px;
+}
+
+.text-center {
+  text-align: center;
 }
 
 /*===========================
@@ -1278,6 +1313,7 @@ p.form-message.error {
 .portfolio-thumb img {
   width: 100%;
   transition: transform 0.3s ease-out;
+  max-width: 300px;
 }
 
 .portfolio-thumb:hover img {
@@ -1287,4 +1323,27 @@ p.form-message.error {
 .portfolio-info {
   text-align: center;
   margin-top: 15px;
+}
+
+.portfolio-area .grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(150px, 0fr)); /* Ajusta el tamaño de las columnas */
+  grid-gap: 10px;
+}
+
+.portfolio-thumb {
+  position: relative;
+  overflow: hidden;
+}
+
+.portfolio-thumb img {
+  width: 100%;
+  height: 150px; /* Establece una altura fija para crear la miniatura */
+  object-fit: cover; /* Asegura que la imagen se recorte y mantenga la proporción */
+  display: block;
+  transition: transform 0.3s ease; /* Efecto al pasar el cursor */
+}
+
+.portfolio-thumb:hover img {
+  transform: scale(1.05); /* Efecto zoom al pasar el ratón */
 }
