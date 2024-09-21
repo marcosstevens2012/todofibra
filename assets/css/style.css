@@ -1347,3 +1347,22 @@ p.form-message.error {
 .portfolio-thumb:hover img {
   transform: scale(1.05); /* Efecto zoom al pasar el ratón */
 }
+
+.whatsapp-float {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  z-index: 100;
+  cursor: pointer;
+}
+
+.whatsapp-float img {
+  width: 60px;
+  height: 60px;
+}
+
+.img-fluid {
+  max-width: 100%;
+  height: auto;
+  border-radius: 5px;
+}
