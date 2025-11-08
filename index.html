@@ -44,20 +44,85 @@
     <!--====== Favicon Icon ======-->
     <link rel="shortcut icon" href="assets/images/logo.png" type="image/png" />
 
+    <!--====== Preconnect para optimización ======-->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
     <!--====== Bootstrap css ======-->
+    <link rel="preload" href="assets/css/bootstrap.min.css" as="style" />
     <link rel="stylesheet" href="assets/css/bootstrap.min.css" />
 
     <!--====== Line Icons css ======-->
+    <link rel="preload" href="assets/css/LineIcons.css" as="style" />
     <link rel="stylesheet" href="assets/css/LineIcons.css" />
 
     <!--====== Magnific Popup css ======-->
+    <link rel="preload" href="assets/css/magnific-popup.css" as="style" />
     <link rel="stylesheet" href="assets/css/magnific-popup.css" />
 
     <!--====== Default css ======-->
+    <link rel="preload" href="assets/css/default.css" as="style" />
     <link rel="stylesheet" href="assets/css/default.css" />
 
     <!--====== Style css ======-->
+    <link rel="preload" href="assets/css/style.css" as="style" />
     <link rel="stylesheet" href="assets/css/style.css" />
+
+    <!--====== Accessibility & Performance Styles ======-->
+    <style>
+      /* Skip link para accesibilidad */
+      .skip-link {
+        position: absolute;
+        top: -40px;
+        left: 0;
+        background: #007bff;
+        color: white;
+        padding: 8px 16px;
+        text-decoration: none;
+        z-index: 10000;
+        font-weight: bold;
+      }
+      .skip-link:focus {
+        top: 0;
+      }
+
+      /* Screen reader only class */
+      .sr-only {
+        position: absolute;
+        width: 1px;
+        height: 1px;
+        padding: 0;
+        margin: -1px;
+        overflow: hidden;
+        clip: rect(0, 0, 0, 0);
+        white-space: nowrap;
+        border-width: 0;
+      }
+
+      /* Mejorar contraste en enlaces */
+      a {
+        text-decoration: underline;
+      }
+
+      a:focus {
+        outline: 3px solid #007bff;
+        outline-offset: 2px;
+      }
+
+      /* Mejorar foco en botones */
+      button:focus,
+      .main-btn:focus {
+        outline: 3px solid #007bff;
+        outline-offset: 2px;
+      }
+
+      /* Mejorar contraste en inputs */
+      input:focus,
+      textarea:focus {
+        outline: 2px solid #007bff;
+        border-color: #007bff;
+      }
+    </style>
 
     <!--====== Schema.org Structured Data (JSON-LD) ======-->
     <script type="application/ld+json">
@@ -226,6 +291,11 @@
   </head>
 
   <body>
+    <!-- Skip to main content link for accessibility -->
+    <a href="#main-content" class="skip-link" style="position: absolute; top: -40px; left: 0; background: #007bff; color: white; padding: 8px; text-decoration: none; z-index: 100"
+      >Saltar al contenido principal</a
+    >
+
     <!--====== HEADER PART START ======-->
 
     <header class="header-area">
@@ -233,12 +303,12 @@
         <div class="container">
           <div class="row">
             <div class="col-lg-12">
-              <nav class="navbar navbar-expand-lg">
-                <a class="navbar-brand" href="#">
-                  <img src="assets/images/logo.png" alt="Logo" style="width: 50px" />
+              <nav class="navbar navbar-expand-lg" role="navigation" aria-label="Navegación principal">
+                <a class="navbar-brand" href="#home" aria-label="Todo Fibra - Inicio">
+                  <img src="assets/images/logo.png" alt="Logo Todo Fibra Piscinas" width="50" height="50" style="width: 50px" />
                 </a>
 
-                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarOne" aria-controls="navbarOne" aria-expanded="false" aria-label="Toggle navigation">
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarOne" aria-controls="navbarOne" aria-expanded="false" aria-label="Abrir menú de navegación">
                   <span class="toggler-icon"></span>
                   <span class="toggler-icon"></span>
                   <span class="toggler-icon"></span>
@@ -248,19 +318,19 @@
                 <div class="collapse navbar-collapse sub-menu-bar" id="navbarOne">
                   <ul class="navbar-nav m-auto">
                     <li class="nav-item active">
-                      <a class="page-scroll" href="#home">INICIO</a>
+                      <a class="page-scroll" href="#home" aria-label="Ir a Inicio">INICIO</a>
                     </li>
                     <li class="nav-item">
-                      <a class="page-scroll" href="#about">QUIÉNES SOMOS</a>
+                      <a class="page-scroll" href="#about" aria-label="Ir a Quiénes Somos">QUIÉNES SOMOS</a>
                     </li>
                     <li class="nav-item">
-                      <a class="page-scroll" href="#service">PRODUCTOS Y SERVICIOS</a>
+                      <a class="page-scroll" href="#service" aria-label="Ir a Productos y Servicios">PRODUCTOS Y SERVICIOS</a>
                     </li>
                     <li class="nav-item">
-                      <a class="page-scroll" href="#portfolio">Productos y proyectos</a>
+                      <a class="page-scroll" href="#portfolio" aria-label="Ver Productos y Proyectos">PRODUCTOS Y PROYECTOS</a>
                     </li>
                     <li class="nav-item">
-                      <a class="page-scroll" href="#contact">CONTACTO</a>
+                      <a class="page-scroll" href="#contact" aria-label="Ir a Contacto">CONTACTO</a>
                     </li>
                   </ul>
                 </div>
@@ -269,10 +339,14 @@
                   <span>SEGUINOS</span>
                   <ul>
                     <li>
-                      <a href="#"><i class="lni-facebook-filled"></i></a>
+                      <a href="https://www.facebook.com/todofibrapiscinas" aria-label="Seguinos en Facebook" target="_blank" rel="noopener noreferrer"
+                        ><i class="lni-facebook-filled" aria-hidden="true"></i
+                      ></a>
                     </li>
                     <li>
-                      <a href="https://www.instagram.com/todofibrapiscinas/"><i class="lni-instagram-original"></i></a>
+                      <a href="https://www.instagram.com/todofibrapiscinas/" aria-label="Seguinos en Instagram" target="_blank" rel="noopener noreferrer"
+                        ><i class="lni-instagram-original" aria-hidden="true"></i
+                      ></a>
                     </li>
                   </ul>
                 </div>
@@ -286,17 +360,19 @@
       </div>
       <!-- navgition -->
 
-      <div id="home" class="header-hero bg_cover" style="background-image: url(assets/images/fondo.gif)">
+      <div id="home" class="header-hero bg_cover" style="background-image: url(assets/images/fondo.gif)" role="banner">
         <div class="container">
           <div class="row justify-content-center">
             <div class="col-xl-8 col-lg-10">
               <div class="header-content text-center">
-                <h1 style="display: none">Todo Fibra - Piscinas de Fibra de Vidrio en Posadas, Misiones</h1>
-                <img src="assets/images/logo.png" alt="Todo Fibra - Piscinas de fibra de vidrio en Posadas, Misiones, Argentina" style="width: 300px" />
+                <h1 style="color: #ffffff; font-size: 2.5rem; margin-bottom: 20px">Todo Fibra - Piscinas de Fibra de Vidrio en Posadas, Misiones</h1>
+                <img src="assets/images/logo.png" alt="Todo Fibra - Piscinas de fibra de vidrio en Posadas, Misiones, Argentina" width="300" height="300" style="width: 300px" fetchpriority="high" />
                 <ul class="header-btn">
-                  <li><a class="main-btn btn-one page-scroll" rel="nofollow" href="#contact">CONTACTANOS</a></li>
+                  <li><a class="main-btn btn-one page-scroll" href="#contact" aria-label="Contactar a Todo Fibra">CONTACTANOS</a></li>
                   <li>
-                    <a class="main-btn btn-two video-popup" href="https://www.instagram.com/p/CuAifdoAeyC/">VER VIDEO<i class="lni-play"></i></a>
+                    <a class="main-btn btn-two video-popup" href="https://www.instagram.com/p/CuAifdoAeyC/" target="_blank" rel="noopener noreferrer" aria-label="Ver video en Instagram"
+                      >VER VIDEO<i class="lni-play" aria-hidden="true"></i
+                    ></a>
                   </li>
                 </ul>
               </div>
@@ -307,7 +383,7 @@
         </div>
         <!-- container -->
         <div class="header-shape">
-          <img src="assets/images/header-shape.svg" alt="shape" />
+          <img src="assets/images/header-shape.svg" alt="Forma decorativa" loading="lazy" />
         </div>
       </div>
 
@@ -317,472 +393,474 @@
     <!--====== HEADER PART ENDS ======-->
 
     <!--====== QUIÉNES SOMOS PART START ======-->
-    <section id="about" class="about-area py-5" style="background-color: #ffffff">
-      <div class="container">
-        <div class="row justify-content-center">
-          <div class="col-lg-8">
-            <div class="section-title text-center pb-4">
-              <h2 class="title" style="color: #007bff; font-weight: bold">Quiénes Somos</h2>
-              <hr style="width: 80px; border: 2px solid #007bff; margin: 10px auto" />
-            </div>
-            <div class="content text-center">
-              <p class="text" style="font-size: 18px; line-height: 1.7; color: #333">
-                <strong>TODO FIBRA</strong> es una empresa con <strong>casi 30 años de trayectoria</strong> en la provincia de <strong>Misiones, Argentina</strong>, especializada en la fabricación,
-                instalación y comercialización de <strong>piscinas de fibra de vidrio (PRFV)</strong> en <strong>Posadas</strong> y toda la región.
-              </p>
-              <br />
-              <p class="text" style="font-size: 18px; line-height: 1.7; color: #333">
-                Nos destacamos por el <strong>diseño, confort y calidad</strong> de nuestras <strong>piscinas de fibra de vidrio en Misiones</strong>, brindando soluciones tanto a comercios, empresas
-                y al público en general de <strong>Posadas y la provincia de Misiones</strong>. Nuestra <strong>visión</strong> es seguir desarrollando nuevos diseños de piscinas, superando siempre
-                las expectativas de nuestros clientes.
-              </p>
-              <br />
-              <p class="text" style="font-size: 18px; line-height: 1.7; color: #333">
-                Nos mantenemos como <strong>líderes del mercado en Misiones</strong>, destacándonos por nuestra <strong>calidad, innovación</strong> y <strong>tiempos de entrega</strong>. Nuestra
-                <strong>misión</strong> es seguir ofreciendo un servicio con garantía, asegurando la <strong>satisfacción y fidelidad</strong> de nuestros clientes en
-                <strong>Posadas, Misiones y toda la región</strong>.
-              </p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-    <!--====== QUIÉNES SOMOS PART ENDS ======-->
-
-    <!--====== SERVICES PART START ======-->
-    <section id="service" class="services-area py-5" style="background-color: #f0f8ff">
-      <div class="container">
-        <div class="row justify-content-center">
-          <div class="col-lg-8">
-            <div class="section-title text-center pb-4">
-              <h2 class="title" style="color: #007bff; font-weight: bold">Servicios y Productos en Posadas, Misiones</h2>
-              <hr style="width: 80px; border: 2px solid #007bff; margin: 10px auto" />
-              <p class="text" style="font-size: 18px; color: #333; line-height: 1.7">
-                Atención personalizada en todas las etapas del proceso de <strong>instalación de piscinas de fibra de vidrio en Posadas y Misiones</strong>. También brindamos accesorios adicionales.
-                Nuestro local incluye productos químicos, accesorios de limpieza y pisos atérmicos, asegurando calidad y asesoramiento continuo.
-              </p>
-            </div>
-          </div>
-        </div>
-
-        <div class="row justify-content-center">
-          <div class="col-lg-10">
-            <div class="row">
-              <!-- Servicio 1 -->
-              <div class="col-md-6">
-                <div class="services-content mt-4 d-flex align-items-center">
-                  <div class="services-icon mr-3" style="color: #007bff; font-size: 40px">
-                    <i class="lni lni-map-marker"></i>
-                  </div>
-                  <div class="media-body">
-                    <h3 class="services-title" style="color: #007bff; font-size: 20px">Asesoramiento en el lugar</h3>
-                    <p class="text" style="font-size: 16px; color: #555">Asesoramiento en el lugar de instalación en Posadas y toda Misiones para garantizar la mejor ubicación.</p>
-                  </div>
-                </div>
+    <main id="main-content">
+      <section id="about" class="about-area py-5" style="background-color: #ffffff">
+        <div class="container">
+          <div class="row justify-content-center">
+            <div class="col-lg-8">
+              <div class="section-title text-center pb-4">
+                <h2 class="title" style="color: #007bff; font-weight: bold">Quiénes Somos</h2>
+                <hr style="width: 80px; border: 2px solid #007bff; margin: 10px auto" aria-hidden="true" />
               </div>
-              <!-- Servicio 2 -->
-              <div class="col-md-6">
-                <div class="services-content mt-4 d-flex align-items-center">
-                  <div class="services-icon mr-3" style="color: #007bff; font-size: 40px">
-                    <i class="lni lni-map-marker"></i>
-                  </div>
-                  <div class="media-body">
-                    <h3 class="services-title" style="color: #007bff; font-size: 20px">Instalación de accesorios</h3>
-                    <p class="text" style="font-size: 16px; color: #555">Instalación profesional de bombas, filtros, luces y accesorios para piscinas en Misiones.</p>
-                  </div>
-                </div>
-              </div>
-              <!-- Servicio 3 -->
-              <div class="col-md-6">
-                <div class="services-content mt-4 d-flex align-items-center">
-                  <div class="services-icon mr-3" style="color: #007bff; font-size: 40px">
-                    <i class="lni lni-brush"></i>
-                  </div>
-                  <div class="media-body">
-                    <h3 class="services-title" style="color: #007bff; font-size: 20px">Reparación y Revestimiento</h3>
-                    <p class="text" style="font-size: 16px; color: #555">Reparación y revestimiento de piscinas de mampostería con fibra de vidrio en Posadas, Misiones.</p>
-                  </div>
-                </div>
-              </div>
-              <!-- Servicio 4 -->
-              <div class="col-md-6">
-                <div class="services-content mt-4 d-flex align-items-center">
-                  <div class="services-icon mr-3" style="color: #007bff; font-size: 40px">
-                    <i class="lni lni-drop"></i>
-                  </div>
-                  <div class="media-body">
-                    <h3 class="services-title" style="color: #007bff; font-size: 20px">Reparación de tanques</h3>
-                    <p class="text" style="font-size: 16px; color: #555">Reparación especializada de tanques y otros productos de PRFV en la provincia de Misiones.</p>
-                  </div>
-                </div>
+              <div class="content text-center">
+                <p class="text" style="font-size: 18px; line-height: 1.7; color: #333">
+                  <strong>TODO FIBRA</strong> es una empresa con <strong>casi 30 años de trayectoria</strong> en la provincia de <strong>Misiones, Argentina</strong>, especializada en la fabricación,
+                  instalación y comercialización de <strong>piscinas de fibra de vidrio (PRFV)</strong> en <strong>Posadas</strong> y toda la región.
+                </p>
+                <br />
+                <p class="text" style="font-size: 18px; line-height: 1.7; color: #333">
+                  Nos destacamos por el <strong>diseño, confort y calidad</strong> de nuestras <strong>piscinas de fibra de vidrio en Misiones</strong>, brindando soluciones tanto a comercios,
+                  empresas y al público en general de <strong>Posadas y la provincia de Misiones</strong>. Nuestra <strong>visión</strong> es seguir desarrollando nuevos diseños de piscinas, superando
+                  siempre las expectativas de nuestros clientes.
+                </p>
+                <br />
+                <p class="text" style="font-size: 18px; line-height: 1.7; color: #333">
+                  Nos mantenemos como <strong>líderes del mercado en Misiones</strong>, destacándonos por nuestra <strong>calidad, innovación</strong> y <strong>tiempos de entrega</strong>. Nuestra
+                  <strong>misión</strong> es seguir ofreciendo un servicio con garantía, asegurando la <strong>satisfacción y fidelidad</strong> de nuestros clientes en
+                  <strong>Posadas, Misiones y toda la región</strong>.
+                </p>
               </div>
             </div>
           </div>
         </div>
-      </div>
-    </section>
-    <!--====== SERVICES PART ENDS ======-->
+      </section>
+      <!--====== QUIÉNES SOMOS PART ENDS ======-->
 
-    <!--====== PORTFOLIO SECTION START ======-->
-    <section id="portfolio" class="portfolio-area py-5">
-      <div class="container">
-        <div class="row justify-content-center">
-          <div class="col-lg-8">
-            <div class="section-title text-center pb-4">
-              <h2 class="title">Modelos de Piscinas de Fibra de Vidrio</h2>
-            </div>
-          </div>
-        </div>
-
-        <!-- Portfolio Items Grid -->
-        <div class="row">
-          <!-- Portfolio Item 1 -->
-          <div class="col-lg-3 col-md-6 col-6 mb-4">
-            <div class="">
-              <a href="assets/images/piscinas/1.png" data-lightbox="portfolio" data-title="Romana Clásica / Medium">
-                <img src="assets/images/piscinas/1.png" class="img-fluid" alt="Piscina de fibra de vidrio romana clásica modelo 1 - Posadas Misiones" />
-              </a>
-            </div>
-          </div>
-          <!-- Portfolio Item 2 -->
-          <div class="col-lg-3 col-md-6 col-6 mb-4">
-            <div class="">
-              <a href="assets/images/piscinas/2.png" data-lightbox="portfolio" data-title="Romana Clásica / Medium">
-                <img src="assets/images/piscinas/2.png" class="img-fluid" alt="Piscina de fibra de vidrio romana clásica modelo 2 - Posadas Misiones" />
-              </a>
-            </div>
-          </div>
-          <!-- Portfolio Item 3 -->
-          <div class="col-lg-3 col-md-6 col-6 mb-4">
-            <div class="">
-              <a href="assets/images/piscinas/3.png" data-lightbox="portfolio" data-title="Romana Clásica / Medium">
-                <img src="assets/images/piscinas/3.png" class="img-fluid" alt="Piscina de fibra de vidrio romana clásica modelo 3 - Posadas Misiones" />
-              </a>
+      <!--====== SERVICES PART START ======-->
+      <section id="service" class="services-area py-5" style="background-color: #f0f8ff">
+        <div class="container">
+          <div class="row justify-content-center">
+            <div class="col-lg-8">
+              <div class="section-title text-center pb-4">
+                <h2 class="title" style="color: #007bff; font-weight: bold">Servicios y Productos en Posadas, Misiones</h2>
+                <hr style="width: 80px; border: 2px solid #007bff; margin: 10px auto" aria-hidden="true" />
+                <p class="text" style="font-size: 18px; color: #333; line-height: 1.7">
+                  Atención personalizada en todas las etapas del proceso de <strong>instalación de piscinas de fibra de vidrio en Posadas y Misiones</strong>. También brindamos accesorios adicionales.
+                  Nuestro local incluye productos químicos, accesorios de limpieza y pisos atérmicos, asegurando calidad y asesoramiento continuo.
+                </p>
+              </div>
             </div>
           </div>
 
-          <div class="col-lg-3 col-md-6 col-6 mb-4">
-            <div class="">
-              <a href="assets/images/piscinas/4.png" data-lightbox="portfolio" data-title="Romana Clásica / Medium">
-                <img src="assets/images/piscinas/4.png" class="img-fluid" alt="Piscina de fibra de vidrio romana clásica modelo 4 - Posadas Misiones" />
-              </a>
-            </div>
-          </div>
-
-          <div class="col-lg-3 col-md-6 col-6 mb-4">
-            <div class="">
-              <a href="assets/images/piscinas/5.png" data-lightbox="portfolio" data-title="Romana Clásica / Medium">
-                <img src="assets/images/piscinas/5.png" class="img-fluid" alt="Piscina de fibra de vidrio modelo 5 fabricada en Posadas Misiones" />
-              </a>
-            </div>
-          </div>
-
-          <div class="col-lg-3 col-md-6 col-6 mb-4">
-            <div class="">
-              <a href="assets/images/piscinas/6.png" data-lightbox="portfolio" data-title="Romana Clásica / Medium">
-                <img src="assets/images/piscinas/6.png" class="img-fluid" alt="Piscina de fibra de vidrio modelo 6 fabricada en Posadas Misiones" />
-              </a>
-            </div>
-          </div>
-
-          <div class="col-lg-3 col-md-6 col-6 mb-4">
-            <div class="">
-              <a href="assets/images/piscinas/7.png" data-lightbox="portfolio" data-title="Romana Clásica / Medium">
-                <img src="assets/images/piscinas/7.png" class="img-fluid" alt="Piscina de fibra de vidrio modelo 7 fabricada en Posadas Misiones" />
-              </a>
-            </div>
-          </div>
-
-          <div class="col-lg-3 col-md-6 col-6 mb-4">
-            <div class="">
-              <a href="assets/images/piscinas/8.png" data-lightbox="portfolio" data-title="Romana Clásica / Medium">
-                <img src="assets/images/piscinas/8.png" class="img-fluid" alt="Piscina de fibra de vidrio modelo 8 fabricada en Posadas Misiones" />
-              </a>
-            </div>
-          </div>
-
-          <div class="col-lg-3 col-md-6 col-6 mb-4">
-            <div class="">
-              <a href="assets/images/piscinas/9.png" data-lightbox="portfolio" data-title="Romana Clásica / Medium">
-                <img src="assets/images/piscinas/9.png" class="img-fluid" alt="Piscina de fibra de vidrio modelo 9 fabricada en Posadas Misiones" />
-              </a>
-            </div>
-          </div>
-
-          <div class="col-lg-3 col-md-6 col-6 mb-4">
-            <div class="">
-              <a href="assets/images/piscinas/10.png" data-lightbox="portfolio" data-title="Romana Clásica / Medium">
-                <img src="assets/images/piscinas/10.png" class="img-fluid" alt="Piscina de fibra de vidrio modelo 10 fabricada en Posadas Misiones" />
-              </a>
-            </div>
-          </div>
-
-          <div class="col-lg-3 col-md-6 col-6 mb-4">
-            <div class="">
-              <a href="assets/images/piscinas/11.png" data-lightbox="portfolio" data-title="Romana Clásica / Medium">
-                <img src="assets/images/piscinas/11.png" class="img-fluid" alt="Piscina de fibra de vidrio modelo 11 fabricada en Posadas Misiones" />
-              </a>
-            </div>
-          </div>
-
-          <!-- Add more images as needed -->
-        </div>
-      </div>
-    </section>
-    <!--====== PORTFOLIO SECTION END ======-->
-
-    <!--====== PORTFOLIO SECTION START ======-->
-    <section id="portfolio" class="portfolio-area py-5 bg-light" style="background-color: #f0f8ff">
-      <div class="container">
-        <div class="row justify-content-center">
-          <div class="col-lg-8">
-            <div class="section-title text-center pb-4">
-              <h2 class="title" style="color: #007bff; font-weight: bold">Productos y Proyectos en Posadas, Misiones</h2>
-            </div>
-          </div>
-        </div>
-
-        <!-- Proyectos Section -->
-        <div class="row">
-          <div class="col-12">
-            <h3 class="mb-3" style="color: #007bff">Proyectos Realizados</h3>
-          </div>
-
-          <!-- Portfolio Item 1 -->
-          <div class="col-lg-2 col-md-6 col-4 mb-4">
-            <div class="portfolio-thumb">
-              <a href="assets/images/proyectos/pileta1.jpeg" data-lightbox="portfolio" data-title="Proyecto Piscina 1">
-                <img src="assets/images/proyectos/pileta1.jpeg" class="img-fluid" alt="Proyecto piscina de fibra de vidrio instalada en Posadas Misiones" />
-              </a>
-            </div>
-          </div>
-
-          <!-- Portfolio Item 2 -->
-          <div class="col-lg-2 col-md-6 col-4 mb-4">
-            <div class="portfolio-thumb">
-              <a href="assets/images/proyectos/pileta2.jpg" data-lightbox="portfolio" data-title="Proyecto Piscina 2">
-                <img src="assets/images/proyectos/pileta2.jpg" class="img-fluid" alt="Proyecto piscina fibra vidrio terminada en Posadas Misiones" />
-              </a>
-            </div>
-          </div>
-
-          <!-- Portfolio Item 3 -->
-          <div class="col-lg-2 col-md-6 col-4 mb-4">
-            <div class="portfolio-thumb">
-              <a href="assets/images/proyectos/pileta3.jpeg" data-lightbox="portfolio" data-title="Proyecto Piscina 3">
-                <img src="assets/images/proyectos/pileta3.jpeg" class="img-fluid" alt="Instalación piscina fibra de vidrio en Posadas Misiones" />
-              </a>
-            </div>
-          </div>
-
-          <!-- Portfolio Item 4 -->
-          <div class="col-lg-2 col-md-6 col-4 mb-4">
-            <div class="portfolio-thumb">
-              <a href="assets/images/proyectos/pileta4.jpeg" data-lightbox="portfolio" data-title="Proyecto Piscina 4">
-                <img src="assets/images/proyectos/pileta4.jpeg" class="img-fluid" alt="Piscina PRFV instalada en hogar de Posadas Misiones" />
-              </a>
-            </div>
-          </div>
-        </div>
-
-        <div class="col-lg-2 col-md-6 col-4 mb-4">
-          <div class="portfolio-thumb">
-            <a href="assets/images/proyectos/pileta5.jpeg" data-lightbox="portfolio" data-title="Proyecto Piscina 1">
-              <img src="assets/images/proyectos/pileta5.jpeg" class="img-fluid" alt="Piscina fibra de vidrio proyecto terminado Posadas Misiones" />
-            </a>
-          </div>
-        </div>
-
-        <!-- Productos Section -->
-        <div class="row">
-          <div class="col-12">
-            <h3 class="mb-3" style="color: #007bff">Productos</h3>
-          </div>
-
-          <!-- Portfolio Item 1 -->
-          <div class="col-lg-2 col-md-6 col-4 mb-4">
-            <div class="portfolio-thumb">
-              <a href="assets/images/productos/producto1.jpeg" data-lightbox="portfolio" data-title="Producto 1">
-                <img src="assets/images/productos/producto1.jpeg" class="img-fluid" alt="Productos PRFV fibra de vidrio Todo Fibra Misiones" />
-              </a>
-            </div>
-          </div>
-
-          <!-- Portfolio Item 2 -->
-          <div class="col-lg-2 col-md-6 col-4 mb-4">
-            <div class="portfolio-thumb">
-              <a href="assets/images/productos/producto2.jpg" data-lightbox="portfolio" data-title="Producto 2">
-                <img src="assets/images/productos/producto2.jpg" class="img-fluid" alt="Tanques y productos de fibra de vidrio Posadas" />
-              </a>
-            </div>
-          </div>
-
-          <!-- Portfolio Item 3 -->
-          <div class="col-lg-2 col-md-6 col-4 mb-4">
-            <div class="portfolio-thumb">
-              <a href="assets/images/productos/producto3.jpeg" data-lightbox="portfolio" data-title="Producto 3">
-                <img src="assets/images/productos/producto3.jpeg" class="img-fluid" alt="Productos fibra de vidrio fabricados en Misiones" />
-              </a>
-            </div>
-          </div>
-
-          <!-- Portfolio Item 4 -->
-          <div class="col-lg-2 col-md-6 col-4 mb-4">
-            <div class="portfolio-thumb">
-              <a href="assets/images/productos/producto4.jpeg" data-lightbox="portfolio" data-title="Producto 4">
-                <img src="assets/images/productos/producto4.jpeg" class="img-fluid" alt="Productos PRFV Todo Fibra Posadas Misiones" />
-              </a>
-            </div>
-          </div>
-
-          <!-- Portfolio Item 5 -->
-          <div class="col-lg-2 col-md-6 col-4 mb-4">
-            <div class="portfolio-thumb">
-              <a href="assets/images/productos/producto5.jpeg" data-lightbox="portfolio" data-title="Producto 5">
-                <img src="assets/images/productos/producto5.jpeg" class="img-fluid" alt="Productos especializados fibra de vidrio Misiones" />
-              </a>
-            </div>
-          </div>
-        </div>
-
-        <!-- Accesorios Section -->
-        <div class="row">
-          <div class="col-12">
-            <h3 class="mb-3" style="color: #007bff">Accesorios para Piscinas</h3>
-          </div>
-
-          <!-- Portfolio Item 1 -->
-          <div class="col-lg-2 col-md-6 col-4 mb-4">
-            <div class="portfolio-thumb">
-              <a href="assets/images/accesorios/06808c8db0f7aaac2b67bd2a338aff91.jpg" data-lightbox="portfolio" data-title="Accesorio 1">
-                <img src="assets/images/accesorios/06808c8db0f7aaac2b67bd2a338aff91.jpg" class="img-fluid" alt="Accesorios para piscinas Posadas Misiones" />
-              </a>
-            </div>
-          </div>
-
-          <!-- Portfolio Item 2 -->
-          <div class="col-lg-2 col-md-6 col-4 mb-4">
-            <div class="portfolio-thumb">
-              <a href="assets/images/accesorios/7768e6a50f3946aa14347a58035c1b0d.jpg" data-lightbox="portfolio" data-title="Accesorio 2">
-                <img src="assets/images/accesorios/7768e6a50f3946aa14347a58035c1b0d.jpg" class="img-fluid" alt="Bombas y filtros para piscinas Misiones" />
-              </a>
-            </div>
-          </div>
-
-          <!-- Portfolio Item 3 -->
-          <div class="col-lg-2 col-md-6 col-4 mb-4">
-            <div class="portfolio-thumb">
-              <a href="assets/images/accesorios/a3013a77b33f6af6bf544a0c68a14c87.jpg" data-lightbox="portfolio" data-title="Accesorio 3">
-                <img src="assets/images/accesorios/a3013a77b33f6af6bf544a0c68a14c87.jpg" class="img-fluid" alt="Accesorios y productos químicos piscinas Posadas" />
-              </a>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-    <!--====== PORTFOLIO SECTION END ======-->
-
-    <!--====== PORTFOLIO FILTER PART ENDS ======-->
-
-    <!--====== CONTACT PART START ======-->
-
-    <section id="contact" class="contact-area">
-      <div class="container">
-        <div class="row justify-content-center">
-          <div class="col-lg-6">
-            <div class="section-title text-center pb-10">
-              <h2 class="title" style="color: #007bff; font-weight: bold">Contacto - Posadas, Misiones</h2>
-              <!-- <p class="text">Stop wasting time and money designing and managing a website that doesn't get results. Happiness guaranteed!</p> -->
-            </div>
-            <!-- section title -->
-          </div>
-        </div>
-        <!-- row -->
-        <div class="row justify-content-center">
-          <div class="col-lg-8">
-            <div class="contact-form">
-              <form id="contact-form" action="assets/contact.php" method="post" data-toggle="validator">
-                <div class="row">
-                  <div class="col-md-6">
-                    <div class="single-form form-group">
-                      <input type="text" name="name" placeholder="Tu nombre" data-error="Name is required." required="required" />
-                      <div class="help-block with-errors"></div>
+          <div class="row justify-content-center">
+            <div class="col-lg-10">
+              <div class="row">
+                <!-- Servicio 1 -->
+                <div class="col-md-6">
+                  <div class="services-content mt-4 d-flex align-items-center">
+                    <div class="services-icon mr-3" style="color: #007bff; font-size: 40px">
+                      <i class="lni lni-map-marker"></i>
                     </div>
-                    <!-- single form -->
-                  </div>
-                  <div class="col-md-6">
-                    <div class="single-form form-group">
-                      <input type="email" name="email" placeholder="Tu email" data-error="Valid email is required." required="required" />
-                      <div class="help-block with-errors"></div>
+                    <div class="media-body">
+                      <h3 class="services-title" style="color: #007bff; font-size: 20px">Asesoramiento en el lugar</h3>
+                      <p class="text" style="font-size: 16px; color: #555">Asesoramiento en el lugar de instalación en Posadas y toda Misiones para garantizar la mejor ubicación.</p>
                     </div>
-                    <!-- single form -->
-                  </div>
-                  <div class="col-md-6">
-                    <div class="single-form form-group">
-                      <input type="text" name="subject" placeholder="Motivo" data-error="Subject is required." required="required" />
-                      <div class="help-block with-errors"></div>
-                    </div>
-                    <!-- single form -->
-                  </div>
-                  <div class="col-md-6">
-                    <div class="single-form form-group">
-                      <input type="text" name="phone" placeholder="Telefono" data-error="Phone is required." required="required" />
-                      <div class="help-block with-errors"></div>
-                    </div>
-                    <!-- single form -->
-                  </div>
-                  <div class="col-md-12">
-                    <div class="single-form form-group">
-                      <textarea placeholder="Tu mensaje" name="message" data-error="Please, leave us a message." required="required"></textarea>
-                      <div class="help-block with-errors"></div>
-                    </div>
-                    <!-- single form -->
-                  </div>
-                  <p class="form-message"></p>
-                  <div class="col-md-12">
-                    <div class="single-form form-group text-center">
-                      <button type="submit" class="main-btn">Enviar mensaje</button>
-                    </div>
-                    <!-- single form -->
                   </div>
                 </div>
-                <!-- row -->
-              </form>
+                <!-- Servicio 2 -->
+                <div class="col-md-6">
+                  <div class="services-content mt-4 d-flex align-items-center">
+                    <div class="services-icon mr-3" style="color: #007bff; font-size: 40px">
+                      <i class="lni lni-map-marker"></i>
+                    </div>
+                    <div class="media-body">
+                      <h3 class="services-title" style="color: #007bff; font-size: 20px">Instalación de accesorios</h3>
+                      <p class="text" style="font-size: 16px; color: #555">Instalación profesional de bombas, filtros, luces y accesorios para piscinas en Misiones.</p>
+                    </div>
+                  </div>
+                </div>
+                <!-- Servicio 3 -->
+                <div class="col-md-6">
+                  <div class="services-content mt-4 d-flex align-items-center">
+                    <div class="services-icon mr-3" style="color: #007bff; font-size: 40px">
+                      <i class="lni lni-brush"></i>
+                    </div>
+                    <div class="media-body">
+                      <h3 class="services-title" style="color: #007bff; font-size: 20px">Reparación y Revestimiento</h3>
+                      <p class="text" style="font-size: 16px; color: #555">Reparación y revestimiento de piscinas de mampostería con fibra de vidrio en Posadas, Misiones.</p>
+                    </div>
+                  </div>
+                </div>
+                <!-- Servicio 4 -->
+                <div class="col-md-6">
+                  <div class="services-content mt-4 d-flex align-items-center">
+                    <div class="services-icon mr-3" style="color: #007bff; font-size: 40px">
+                      <i class="lni lni-drop"></i>
+                    </div>
+                    <div class="media-body">
+                      <h3 class="services-title" style="color: #007bff; font-size: 20px">Reparación de tanques</h3>
+                      <p class="text" style="font-size: 16px; color: #555">Reparación especializada de tanques y otros productos de PRFV en la provincia de Misiones.</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
             </div>
-            <!-- row -->
           </div>
         </div>
-        <!-- row -->
-      </div>
-      <!-- conteiner -->
-    </section>
+      </section>
+      <!--====== SERVICES PART ENDS ======-->
 
-    <!--====== CONTACT PART ENDS ======-->
+      <!--====== PORTFOLIO SECTION START ======-->
+      <section id="portfolio" class="portfolio-area py-5">
+        <div class="container">
+          <div class="row justify-content-center">
+            <div class="col-lg-8">
+              <div class="section-title text-center pb-4">
+                <h2 class="title">Modelos de Piscinas de Fibra de Vidrio</h2>
+              </div>
+            </div>
+          </div>
+
+          <!-- Portfolio Items Grid -->
+          <div class="row">
+            <!-- Portfolio Item 1 -->
+            <div class="col-lg-3 col-md-6 col-6 mb-4">
+              <div class="">
+                <a href="assets/images/piscinas/1.png" data-lightbox="portfolio" data-title="Romana Clásica / Medium">
+                  <img src="assets/images/piscinas/1.png" class="img-fluid" alt="Piscina de fibra de vidrio romana clásica modelo 1 - Posadas Misiones" loading="lazy" width="400" height="300" />
+                </a>
+              </div>
+            </div>
+            <!-- Portfolio Item 2 -->
+            <div class="col-lg-3 col-md-6 col-6 mb-4">
+              <div class="">
+                <a href="assets/images/piscinas/2.png" data-lightbox="portfolio" data-title="Romana Clásica / Medium">
+                  <img src="assets/images/piscinas/2.png" class="img-fluid" alt="Piscina de fibra de vidrio romana clásica modelo 2 - Posadas Misiones" loading="lazy" width="400" height="300" />
+                </a>
+              </div>
+            </div>
+            <!-- Portfolio Item 3 -->
+            <div class="col-lg-3 col-md-6 col-6 mb-4">
+              <div class="">
+                <a href="assets/images/piscinas/3.png" data-lightbox="portfolio" data-title="Romana Clásica / Medium">
+                  <img src="assets/images/piscinas/3.png" class="img-fluid" alt="Piscina de fibra de vidrio romana clásica modelo 3 - Posadas Misiones" loading="lazy" width="400" height="300" />
+                </a>
+              </div>
+            </div>
+
+            <div class="col-lg-3 col-md-6 col-6 mb-4">
+              <div class="">
+                <a href="assets/images/piscinas/4.png" data-lightbox="portfolio" data-title="Romana Clásica / Medium">
+                  <img src="assets/images/piscinas/4.png" class="img-fluid" alt="Piscina de fibra de vidrio romana clásica modelo 4 - Posadas Misiones" loading="lazy" width="400" height="300" />
+                </a>
+              </div>
+            </div>
+
+            <div class="col-lg-3 col-md-6 col-6 mb-4">
+              <div class="">
+                <a href="assets/images/piscinas/5.png" data-lightbox="portfolio" data-title="Romana Clásica / Medium">
+                  <img src="assets/images/piscinas/5.png" class="img-fluid" alt="Piscina de fibra de vidrio modelo 5 fabricada en Posadas Misiones" loading="lazy" width="400" height="300" />
+                </a>
+              </div>
+            </div>
+
+            <div class="col-lg-3 col-md-6 col-6 mb-4">
+              <div class="">
+                <a href="assets/images/piscinas/6.png" data-lightbox="portfolio" data-title="Romana Clásica / Medium">
+                  <img src="assets/images/piscinas/6.png" class="img-fluid" alt="Piscina de fibra de vidrio modelo 6 fabricada en Posadas Misiones" loading="lazy" width="400" height="300" />
+                </a>
+              </div>
+            </div>
+
+            <div class="col-lg-3 col-md-6 col-6 mb-4">
+              <div class="">
+                <a href="assets/images/piscinas/7.png" data-lightbox="portfolio" data-title="Romana Clásica / Medium">
+                  <img src="assets/images/piscinas/7.png" class="img-fluid" alt="Piscina de fibra de vidrio modelo 7 fabricada en Posadas Misiones" loading="lazy" width="400" height="300" />
+                </a>
+              </div>
+            </div>
+
+            <div class="col-lg-3 col-md-6 col-6 mb-4">
+              <div class="">
+                <a href="assets/images/piscinas/8.png" data-lightbox="portfolio" data-title="Romana Clásica / Medium">
+                  <img src="assets/images/piscinas/8.png" class="img-fluid" alt="Piscina de fibra de vidrio modelo 8 fabricada en Posadas Misiones" loading="lazy" width="400" height="300" />
+                </a>
+              </div>
+            </div>
+
+            <div class="col-lg-3 col-md-6 col-6 mb-4">
+              <div class="">
+                <a href="assets/images/piscinas/9.png" data-lightbox="portfolio" data-title="Romana Clásica / Medium">
+                  <img src="assets/images/piscinas/9.png" class="img-fluid" alt="Piscina de fibra de vidrio modelo 9 fabricada en Posadas Misiones" loading="lazy" width="400" height="300" />
+                </a>
+              </div>
+            </div>
+
+            <div class="col-lg-3 col-md-6 col-6 mb-4">
+              <div class="">
+                <a href="assets/images/piscinas/10.png" data-lightbox="portfolio" data-title="Romana Clásica / Medium">
+                  <img src="assets/images/piscinas/10.png" class="img-fluid" alt="Piscina de fibra de vidrio modelo 10 fabricada en Posadas Misiones" loading="lazy" width="400" height="300" />
+                </a>
+              </div>
+            </div>
+
+            <div class="col-lg-3 col-md-6 col-6 mb-4">
+              <div class="">
+                <a href="assets/images/piscinas/11.png" data-lightbox="portfolio" data-title="Romana Clásica / Medium">
+                  <img src="assets/images/piscinas/11.png" class="img-fluid" alt="Piscina de fibra de vidrio modelo 11 fabricada en Posadas Misiones" loading="lazy" width="400" height="300" />
+                </a>
+              </div>
+            </div>
+
+            <!-- Add more images as needed -->
+          </div>
+        </div>
+      </section>
+      <!--====== PORTFOLIO SECTION END ======-->
+
+      <!--====== PORTFOLIO SECTION START ======-->
+      <section id="portfolio" class="portfolio-area py-5 bg-light" style="background-color: #f0f8ff">
+        <div class="container">
+          <div class="row justify-content-center">
+            <div class="col-lg-8">
+              <div class="section-title text-center pb-4">
+                <h2 class="title" style="color: #007bff; font-weight: bold">Productos y Proyectos en Posadas, Misiones</h2>
+              </div>
+            </div>
+          </div>
+
+          <!-- Proyectos Section -->
+          <div class="row">
+            <div class="col-12">
+              <h3 class="mb-3" style="color: #007bff">Proyectos Realizados</h3>
+            </div>
+
+            <!-- Portfolio Item 1 -->
+            <div class="col-lg-2 col-md-6 col-4 mb-4">
+              <div class="portfolio-thumb">
+                <a href="assets/images/proyectos/pileta1.jpeg" data-lightbox="portfolio" data-title="Proyecto Piscina 1">
+                  <img src="assets/images/proyectos/pileta1.jpeg" class="img-fluid" alt="Proyecto piscina de fibra de vidrio instalada en Posadas Misiones" loading="lazy" width="300" height="200" />
+                </a>
+              </div>
+            </div>
+
+            <!-- Portfolio Item 2 -->
+            <div class="col-lg-2 col-md-6 col-4 mb-4">
+              <div class="portfolio-thumb">
+                <a href="assets/images/proyectos/pileta2.jpg" data-lightbox="portfolio" data-title="Proyecto Piscina 2">
+                  <img src="assets/images/proyectos/pileta2.jpg" class="img-fluid" alt="Proyecto piscina fibra vidrio terminada en Posadas Misiones" loading="lazy" width="300" height="200" />
+                </a>
+              </div>
+            </div>
+
+            <!-- Portfolio Item 3 -->
+            <div class="col-lg-2 col-md-6 col-4 mb-4">
+              <div class="portfolio-thumb">
+                <a href="assets/images/proyectos/pileta3.jpeg" data-lightbox="portfolio" data-title="Proyecto Piscina 3">
+                  <img src="assets/images/proyectos/pileta3.jpeg" class="img-fluid" alt="Instalación piscina fibra de vidrio en Posadas Misiones" loading="lazy" width="300" height="200" />
+                </a>
+              </div>
+            </div>
+
+            <!-- Portfolio Item 4 -->
+            <div class="col-lg-2 col-md-6 col-4 mb-4">
+              <div class="portfolio-thumb">
+                <a href="assets/images/proyectos/pileta4.jpeg" data-lightbox="portfolio" data-title="Proyecto Piscina 4">
+                  <img src="assets/images/proyectos/pileta4.jpeg" class="img-fluid" alt="Piscina PRFV instalada en hogar de Posadas Misiones" loading="lazy" width="300" height="200" />
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-2 col-md-6 col-4 mb-4">
+            <div class="portfolio-thumb">
+              <a href="assets/images/proyectos/pileta5.jpeg" data-lightbox="portfolio" data-title="Proyecto Piscina 1">
+                <img src="assets/images/proyectos/pileta5.jpeg" class="img-fluid" alt="Piscina fibra de vidrio proyecto terminado Posadas Misiones" loading="lazy" width="300" height="200" />
+              </a>
+            </div>
+          </div>
+
+          <!-- Productos Section -->
+          <div class="row">
+            <div class="col-12">
+              <h3 class="mb-3" style="color: #007bff">Productos</h3>
+            </div>
+
+            <!-- Portfolio Item 1 -->
+            <div class="col-lg-2 col-md-6 col-4 mb-4">
+              <div class="portfolio-thumb">
+                <a href="assets/images/productos/producto1.jpeg" data-lightbox="portfolio" data-title="Producto 1">
+                  <img src="assets/images/productos/producto1.jpeg" class="img-fluid" alt="Productos PRFV fibra de vidrio Todo Fibra Misiones" loading="lazy" width="300" height="200" />
+                </a>
+              </div>
+            </div>
+
+            <!-- Portfolio Item 2 -->
+            <div class="col-lg-2 col-md-6 col-4 mb-4">
+              <div class="portfolio-thumb">
+                <a href="assets/images/productos/producto2.jpg" data-lightbox="portfolio" data-title="Producto 2">
+                  <img src="assets/images/productos/producto2.jpg" class="img-fluid" alt="Tanques y productos de fibra de vidrio Posadas" loading="lazy" width="300" height="200" />
+                </a>
+              </div>
+            </div>
+
+            <!-- Portfolio Item 3 -->
+            <div class="col-lg-2 col-md-6 col-4 mb-4">
+              <div class="portfolio-thumb">
+                <a href="assets/images/productos/producto3.jpeg" data-lightbox="portfolio" data-title="Producto 3">
+                  <img src="assets/images/productos/producto3.jpeg" class="img-fluid" alt="Productos fibra de vidrio fabricados en Misiones" loading="lazy" width="300" height="200" />
+                </a>
+              </div>
+            </div>
+
+            <!-- Portfolio Item 4 -->
+            <div class="col-lg-2 col-md-6 col-4 mb-4">
+              <div class="portfolio-thumb">
+                <a href="assets/images/productos/producto4.jpeg" data-lightbox="portfolio" data-title="Producto 4">
+                  <img src="assets/images/productos/producto4.jpeg" class="img-fluid" alt="Productos PRFV Todo Fibra Posadas Misiones" loading="lazy" width="300" height="200" />
+                </a>
+              </div>
+            </div>
+
+            <!-- Portfolio Item 5 -->
+            <div class="col-lg-2 col-md-6 col-4 mb-4">
+              <div class="portfolio-thumb">
+                <a href="assets/images/productos/producto5.jpeg" data-lightbox="portfolio" data-title="Producto 5">
+                  <img src="assets/images/productos/producto5.jpeg" class="img-fluid" alt="Productos especializados fibra de vidrio Misiones" loading="lazy" width="300" height="200" />
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Accesorios Section -->
+          <div class="row">
+            <div class="col-12">
+              <h3 class="mb-3" style="color: #007bff">Accesorios para Piscinas</h3>
+            </div>
+
+            <!-- Portfolio Item 1 -->
+            <div class="col-lg-2 col-md-6 col-4 mb-4">
+              <div class="portfolio-thumb">
+                <a href="assets/images/accesorios/06808c8db0f7aaac2b67bd2a338aff91.jpg" data-lightbox="portfolio" data-title="Accesorio 1">
+                  <img src="assets/images/accesorios/06808c8db0f7aaac2b67bd2a338aff91.jpg" class="img-fluid" alt="Accesorios para piscinas Posadas Misiones" loading="lazy" width="300" height="200" />
+                </a>
+              </div>
+            </div>
+
+            <!-- Portfolio Item 2 -->
+            <div class="col-lg-2 col-md-6 col-4 mb-4">
+              <div class="portfolio-thumb">
+                <a href="assets/images/accesorios/7768e6a50f3946aa14347a58035c1b0d.jpg" data-lightbox="portfolio" data-title="Accesorio 2">
+                  <img src="assets/images/accesorios/7768e6a50f3946aa14347a58035c1b0d.jpg" class="img-fluid" alt="Bombas y filtros para piscinas Misiones" loading="lazy" width="300" height="200" />
+                </a>
+              </div>
+            </div>
+
+            <!-- Portfolio Item 3 -->
+            <div class="col-lg-2 col-md-6 col-4 mb-4">
+              <div class="portfolio-thumb">
+                <a href="assets/images/accesorios/a3013a77b33f6af6bf544a0c68a14c87.jpg" data-lightbox="portfolio" data-title="Accesorio 3">
+                  <img
+                    src="assets/images/accesorios/a3013a77b33f6af6bf544a0c68a14c87.jpg"
+                    class="img-fluid"
+                    alt="Accesorios y productos químicos piscinas Posadas"
+                    loading="lazy"
+                    width="300"
+                    height="200" />
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!--====== PORTFOLIO SECTION END ======-->
+
+      <!--====== PORTFOLIO FILTER PART ENDS ======-->
+
+      <!--====== CONTACT PART START ======-->
+
+      <section id="contact" class="contact-area">
+        <div class="container">
+          <div class="row justify-content-center">
+            <div class="col-lg-6">
+              <div class="section-title text-center pb-10">
+                <h2 class="title" style="color: #007bff; font-weight: bold">Contacto - Posadas, Misiones</h2>
+              </div>
+            </div>
+          </div>
+          <div class="row justify-content-center">
+            <div class="col-lg-8">
+              <div class="contact-form">
+                <form id="contact-form" action="assets/contact.php" method="post" data-toggle="validator" aria-label="Formulario de contacto">
+                  <div class="row">
+                    <div class="col-md-6">
+                      <div class="single-form form-group">
+                        <label for="name" class="sr-only">Tu nombre</label>
+                        <input type="text" id="name" name="name" placeholder="Tu nombre" aria-label="Ingresa tu nombre" data-error="El nombre es requerido" required />
+                        <div class="help-block with-errors"></div>
+                      </div>
+                    </div>
+                    <div class="col-md-6">
+                      <div class="single-form form-group">
+                        <label for="email" class="sr-only">Tu email</label>
+                        <input type="email" id="email" name="email" placeholder="Tu email" aria-label="Ingresa tu email" data-error="Email válido es requerido" required />
+                        <div class="help-block with-errors"></div>
+                      </div>
+                    </div>
+                    <div class="col-md-6">
+                      <div class="single-form form-group">
+                        <label for="subject" class="sr-only">Motivo</label>
+                        <input type="text" id="subject" name="subject" placeholder="Motivo" aria-label="Motivo de consulta" data-error="El motivo es requerido" required />
+                        <div class="help-block with-errors"></div>
+                      </div>
+                    </div>
+                    <div class="col-md-6">
+                      <div class="single-form form-group">
+                        <label for="phone" class="sr-only">Teléfono</label>
+                        <input type="tel" id="phone" name="phone" placeholder="Teléfono" aria-label="Ingresa tu teléfono" data-error="El teléfono es requerido" required />
+                        <div class="help-block with-errors"></div>
+                      </div>
+                    </div>
+                    <div class="col-md-12">
+                      <div class="single-form form-group">
+                        <label for="message" class="sr-only">Tu mensaje</label>
+                        <textarea id="message" placeholder="Tu mensaje" name="message" aria-label="Escribe tu mensaje" data-error="Por favor, déjanos un mensaje" required></textarea>
+                        <div class="help-block with-errors"></div>
+                      </div>
+                    </div>
+                    <p class="form-message" role="alert" aria-live="polite"></p>
+                    <div class="col-md-12">
+                      <div class="single-form form-group text-center">
+                        <button type="submit" class="main-btn" aria-label="Enviar formulario de contacto">Enviar mensaje</button>
+                      </div>
+                    </div>
+                  </div>
+                </form>
+              </div>
+            </div>
+          </div>
+          <!-- row -->
+        </div>
+        <!-- conteiner -->
+      </section>
+
+      <!--====== CONTACT PART ENDS ======-->
+    </main>
 
     <!--====== FOOTER PART START ======-->
 
     <!-- Botón flotante de WhatsApp -->
-    <a href="https://wa.me/1234567890" class="whatsapp-float" target="_blank">
-      <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp" style="width: 60px" />
+    <a href="https://wa.me/5493764123456" class="whatsapp-float" target="_blank" rel="noopener noreferrer" aria-label="Contactar por WhatsApp">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="Icono WhatsApp" width="60" height="60" style="width: 60px" loading="lazy" />
     </a>
 
-    <footer id="footer" class="footer-area">
+    <footer id="footer" class="footer-area" role="contentinfo">
       <div class="footer-top py-4">
         <div class="container">
           <div class="row">
             <!-- Contact Details -->
             <div class="col-lg-4 col-md-6 mb-4">
-              <h5 style="color: #007bff; font-weight: bold">Contacto</h5>
-              <ul class="list">
-                <li><strong>Dirección:</strong> 2140 San Juan, Posadas, Misiones</li>
-                <li><strong>Teléfono:</strong> +598 1234 5678</li>
-                <li><strong>Email:</strong> contacto@todofibra.com</li>
-              </ul>
+              <h3 style="color: #007bff; font-weight: bold">Contacto</h3>
+              <address class="list" style="font-style: normal">
+                <p><strong>Dirección:</strong> San Juan 2140, Posadas, Misiones</p>
+                <p><strong>Teléfono:</strong> <a href="tel:+5493764123456" style="color: #333">+549 3764 123456</a></p>
+                <p><strong>Email:</strong> <a href="mailto:contacto@todofibra.com" style="color: #333">contacto@todofibra.com</a></p>
+              </address>
             </div>
 
             <!-- Image -->
             <div class="col-lg-4 col-md-6 mb-4 text-center">
-              <img src="assets/images/ubicacion.png" alt="Logo Todo Fibra" style="max-width: 200px; border-radius: 20px" />
+              <img src="assets/images/ubicacion.png" alt="Ubicación Todo Fibra en Posadas Misiones" width="200" height="200" style="max-width: 200px; border-radius: 20px" loading="lazy" />
             </div>
           </div>
         </div>
@@ -793,7 +871,7 @@
           <div class="row">
             <div class="col-lg-12">
               <div class="copyright text-center">
-                <p class="text">Crafted by <a rel="nofollow" href="#">Todo Fibra</a></p>
+                <p class="text">© 2025 <a href="#home" style="color: #007bff">Todo Fibra Piscinas</a> - Todos los derechos reservados</p>
               </div>
             </div>
           </div>
@@ -810,51 +888,53 @@
     <!--====== BACK TO TOP PART ENDS ======-->
 
     <!--====== jquery js ======-->
-    <script src="assets/js/vendor/modernizr-3.6.0.min.js"></script>
-    <script src="assets/js/vendor/jquery-1.12.4.min.js"></script>
+    <script defer src="assets/js/vendor/modernizr-3.6.0.min.js"></script>
+    <script defer src="assets/js/vendor/jquery-1.12.4.min.js"></script>
 
     <!--====== Bootstrap js ======-->
-    <script src="assets/js/bootstrap.min.js"></script>
-    <script src="assets/js/popper.min.js"></script>
+    <script defer src="assets/js/bootstrap.min.js"></script>
+    <script defer src="assets/js/popper.min.js"></script>
 
     <!--====== Ajax Contact js ======-->
-    <script src="assets/js/ajax-contact.js"></script>
+    <script defer src="assets/js/ajax-contact.js"></script>
 
     <!--====== Scrolling Nav js ======-->
-    <script src="assets/js/jquery.easing.min.js"></script>
-    <script src="assets/js/scrolling-nav.js"></script>
+    <script defer src="assets/js/jquery.easing.min.js"></script>
+    <script defer src="assets/js/scrolling-nav.js"></script>
 
     <!--====== Validator js ======-->
-    <script src="assets/js/validator.min.js"></script>
+    <script defer src="assets/js/validator.min.js"></script>
 
     <!--====== Magnific Popup js ======-->
-    <script src="assets/js/jquery.magnific-popup.min.js"></script>
+    <script defer src="assets/js/jquery.magnific-popup.min.js"></script>
 
     <!--====== Main js ======-->
-    <script src="assets/js/main.js"></script>
+    <script defer src="assets/js/main.js"></script>
 
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    <script>
-      $(document).ready(function () {
-        $("#contact-form").on("submit", function (e) {
-          e.preventDefault(); // Evita el envío normal del formulario
+    <script defer src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script defer>
+      window.addEventListener("DOMContentLoaded", function () {
+        $(document).ready(function () {
+          $("#contact-form").on("submit", function (e) {
+            e.preventDefault();
 
-          $.ajax({
-            type: "POST",
-            url: "assets/contact.php",
-            data: $(this).serialize(),
-            dataType: "json",
-            success: function (response) {
-              if (response.success) {
-                alert(response.message); // Muestra un mensaje de éxito
-                $("#contact-form")[0].reset(); // Reinicia el formulario
-              } else {
-                alert(response.message); // Muestra un mensaje de error
-              }
-            },
-            error: function () {
-              alert("Error al enviar el mensaje. Inténtalo de nuevo.");
-            },
+            $.ajax({
+              type: "POST",
+              url: "assets/contact.php",
+              data: $(this).serialize(),
+              dataType: "json",
+              success: function (response) {
+                if (response.success) {
+                  alert(response.message);
+                  $("#contact-form")[0].reset();
+                } else {
+                  alert(response.message);
+                }
+              },
+              error: function () {
+                alert("Error al enviar el mensaje. Inténtalo de nuevo.");
+              },
+            });
           });
         });
       });
