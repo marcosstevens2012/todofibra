@@ -1,0 +1,22 @@
+# robots.txt para Todo Fibra Piscinas - Posadas, Misiones
+# Optimizado para SEO
+
+User-agent: *
+Allow: /
+Allow: /assets/
+Allow: /assets/images/
+Allow: /assets/css/
+Allow: /assets/js/
+
+# Archivos importantes para SEO
+Allow: /sitemap.xml
+Allow: /index.html
+
+# Disallow archivos temporales o de desarrollo
+Disallow: /assets/contact.php
+
+# Referencia al sitemap
+Sitemap: https://todofibrapiscinas.com/sitemap.xml
+
+# Crawl-delay para respetar el servidor
+Crawl-delay: 1
