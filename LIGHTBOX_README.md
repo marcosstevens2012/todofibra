@@ -3,6 +3,7 @@
 ## 🎯 Características Implementadas
 
 Se ha implementado un visualizador de imágenes moderno y funcional para las galerías de:
+
 - **Modelos de piscinas** (11 modelos)
 - **Proyectos realizados** (5 proyectos)
 - **Productos** (5 productos)
@@ -11,8 +12,9 @@ Se ha implementado un visualizador de imágenes moderno y funcional para las gal
 ## ✨ Funcionalidades
 
 ### Navegación
+
 - **Flechas en pantalla**: Haz clic en las flechas izquierda/derecha para navegar
-- **Teclado**: 
+- **Teclado**:
   - `←` (izquierda) - Imagen anterior
   - `→` (derecha) - Imagen siguiente
   - `Esc` - Cerrar lightbox
@@ -22,12 +24,14 @@ Se ha implementado un visualizador de imágenes moderno y funcional para las gal
 - **Contador**: Muestra "X / Total" para saber tu posición en la galería
 
 ### Interacción
+
 - **Clic en la imagen miniatura**: Abre el lightbox
 - **Clic en el fondo oscuro**: Cierra el lightbox
 - **Botón X**: Cierra el lightbox
 - **Efecto hover**: Al pasar el mouse sobre las miniaturas, se muestra un ícono de lupa 🔍
 
 ### Características Visuales
+
 - Fondo oscuro con blur para mejor enfoque
 - Animación de zoom suave al abrir
 - Loading spinner mientras cargan las imágenes
@@ -36,6 +40,7 @@ Se ha implementado un visualizador de imágenes moderno y funcional para las gal
 - Bordes redondeados y sombras elegantes
 
 ### Accesibilidad
+
 - Navegación con teclado completa
 - Focus visible en todos los controles
 - Atributos ARIA para lectores de pantalla
@@ -44,16 +49,19 @@ Se ha implementado un visualizador de imágenes moderno y funcional para las gal
 ## 📱 Responsive Design
 
 ### Desktop (> 768px)
+
 - Controles grandes y visibles
 - Imágenes hasta 80vh de altura
 - Navegación óptima con mouse y teclado
 
 ### Tablet (≤ 768px)
+
 - Controles adaptados al tamaño de pantalla
 - Imágenes hasta 70vh de altura
 - Soporte para gestos táctiles
 
 ### Mobile (≤ 480px)
+
 - Controles compactos optimizados
 - Tamaños de fuente reducidos para mejor lectura
 - Interfaz simplificada y fácil de usar
@@ -61,11 +69,13 @@ Se ha implementado un visualizador de imágenes moderno y funcional para las gal
 ## 🎨 Personalización
 
 ### Colores principales
+
 - Fondo overlay: `rgba(0, 0, 0, 0.95)` con blur
 - Color de acento (hover): `#007bff` (azul)
 - Botón cerrar hover: `rgba(255, 0, 0, 0.7)` (rojo)
 
 ### Archivos
+
 - **CSS**: `/assets/css/lightbox.css`
 - **JavaScript**: `/assets/js/lightbox.js`
 
