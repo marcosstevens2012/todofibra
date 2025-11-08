@@ -47,26 +47,26 @@
     <!--====== Preconnect para optimización ======-->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="preconnect" href="https://upload.wikimedia.org" />
 
-    <!--====== Bootstrap css ======-->
-    <link rel="preload" href="assets/css/bootstrap.min.css" as="style" />
-    <link rel="stylesheet" href="assets/css/bootstrap.min.css" />
+    <!--====== Preload imagen LCP (Largest Contentful Paint) ======-->
+    <link rel="preload" as="image" href="assets/images/fondo.gif" fetchpriority="high" />
 
-    <!--====== Line Icons css ======-->
-    <link rel="preload" href="assets/css/LineIcons.css" as="style" />
-    <link rel="stylesheet" href="assets/css/LineIcons.css" />
+    <!--====== Bootstrap css - Critical ======-->
+    <link rel="stylesheet" href="assets/css/bootstrap.min.css" media="all" />
 
-    <!--====== Magnific Popup css ======-->
-    <link rel="preload" href="assets/css/magnific-popup.css" as="style" />
-    <link rel="stylesheet" href="assets/css/magnific-popup.css" />
+    <!--====== Non-critical CSS - Load asynchronously ======-->
+    <link rel="preload" href="assets/css/LineIcons.css" as="style" onload="this.onload=null;this.rel='stylesheet'" />
+    <noscript><link rel="stylesheet" href="assets/css/LineIcons.css" /></noscript>
 
-    <!--====== Default css ======-->
-    <link rel="preload" href="assets/css/default.css" as="style" />
-    <link rel="stylesheet" href="assets/css/default.css" />
+    <link rel="preload" href="assets/css/magnific-popup.css" as="style" onload="this.onload=null;this.rel='stylesheet'" />
+    <noscript><link rel="stylesheet" href="assets/css/magnific-popup.css" /></noscript>
+
+    <link rel="preload" href="assets/css/default.css" as="style" onload="this.onload=null;this.rel='stylesheet'" />
+    <noscript><link rel="stylesheet" href="assets/css/default.css" /></noscript>
 
     <!--====== Style css ======-->
-    <link rel="preload" href="assets/css/style.css" as="style" />
-    <link rel="stylesheet" href="assets/css/style.css" />
+    <link rel="stylesheet" href="assets/css/style.css" media="all" />
 
     <!--====== Accessibility & Performance Styles ======-->
     <style>
