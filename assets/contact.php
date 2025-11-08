@@ -12,7 +12,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     }
 
     
-    $to = 'marcosstevens2012@gmail.com'; 
+    $to = 'todofibrapiscinas@gmail.com'; 
     $headers = "From: $name <$email>\r\n";
     $headers .= "Reply-To: $email\r\n";
     

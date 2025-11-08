@@ -237,7 +237,7 @@
 
 ### ⚠️ NOTAS IMPORTANTES
 
-1. **Actualizar datos de contacto**: Verificar que el teléfono (+598 1234 5678) sea correcto
+1. **Actualizar datos de contacto**: Verificar que el teléfono (+54 9 3764 82-5138) sea correcto
 2. **Dominio**: Asegurar que el dominio todofibrapiscinas.com esté registrado
 3. **Hosting**: Configurar SSL (HTTPS) para mejor SEO
 4. **Consistencia NAP**: Nombre, dirección y teléfono deben ser idénticos en todos lados
@@ -249,8 +249,8 @@
 **REVISAR Y ACTUALIZAR SI ES NECESARIO:**
 
 - Dirección: San Juan 2140, Posadas, Misiones
-- Teléfono: +598 1234 5678
-- Email: contacto@todofibra.com
+- Teléfono: +54 9 3764 82-5138
+- Email: todofibrapiscinas@gmail.com
 - Instagram: @todofibrapiscinas
 
 ---
